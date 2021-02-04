@@ -1,4 +1,3 @@
 # node-notifications-training
 
-更新 key  
-./node_modules/.bin/web-push generate-vapid-keys
+## 透過 node.js 到 browser service worker 推播

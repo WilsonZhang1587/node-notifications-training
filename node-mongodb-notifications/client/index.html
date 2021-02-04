@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Push Notifications Using Node</title>
+</head>
+
+<body>
+    <h1>Push Notifications Using Node</h1>
+
+    <button onclick="add()">add</button>
+</body>
+<script src="client.js"></script>
+<script>
+    let n = 3
+    let nString = `0${n}`
+
+    function add() {
+        fetch('/add', {
+            method: 'POST',
+            body: JSON.stringify({
+                data: nString,
+                test: n
+            }),
+            headers: {
+                'content-type': 'application/json'
+            }
+        })
+        n++;
+        nString = `0${n}`
+    }
+</script>
+
+</html>
